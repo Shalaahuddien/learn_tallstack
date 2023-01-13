@@ -1,0 +1,3 @@
+<livewire:getstarted/>
+
+<livewire:hello/>
