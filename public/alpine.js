@@ -1,4 +1,4 @@
-document.addEventListener('alpine:init', () => {
+document.addEventListener('alpine:init', async () => {
 
     Alpine.data('hello', () => ({
         message: 'i luph alpine',
@@ -54,23 +54,39 @@ document.addEventListener('alpine:init', () => {
         baseUrl: 'https://imdb8.p.rapidapi.com',
         api: 'fa8946b5e6msh517be52504e13e6p189bd2jsn06062a93600d',
         listMovies: [],
+        isLoading: false,
 
-        async getMovies()
+        async getMovies(searchKey)
         {
+
+            this.isLoading = true
+
             //fetch api
-            var response = await fetch(this.baseUrl + '/auto-complete?q=game of thr', {
+            // var searchKey = this.$wire.searchKey ?? 'marvel'
+            var response = await fetch(this.baseUrl + `/auto-complete?q=${searchKey}`, {
                 method: 'GET',
-                
+
                 headers: {
-                    'X-RapidAPI-Key': this.apiKey,
+                    'X-RapidAPI-Key': this.api,
                     'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
                   }
             })
+            // consume response api
+            // console.log("response1", response)
+
+            response = await response.json();
+            // var responseJson = await response.json()
+
+            // console.log("response2", response)
+
+            this.listMovies = response.d
+            // console.log("listMovie", this.listMovie)
+
+            // loading done
+            this.isLoading = false
+
         }
 
     }))
-
-    // consume response api
-    console.log("response", response)
 
 } )
