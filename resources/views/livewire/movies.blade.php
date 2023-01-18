@@ -1,6 +1,8 @@
 <div x-data="movies" class="py-3" >
 
-    <div x-init="getMovies('marvel')"></div>
+    {{-- <h1>{{ $searchKey }}</h1> --}}
+
+    <div x-init="getMovies($wire.searchKey)"></div>
 
     <livewire:search-component />
 

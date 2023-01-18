@@ -19,3 +19,5 @@ use App\Http\Livewire\Movies;
 Route::get('/', Home::class);
 
 Route::get('/movies', Movies::class);
+
+Route::get('/search/movies/{urlkey}', Movies::class);
