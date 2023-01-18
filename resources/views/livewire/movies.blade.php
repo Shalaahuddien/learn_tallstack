@@ -4,7 +4,7 @@
 
     <div x-init="getMovies($wire.searchKey)"></div>
 
-    <livewire:search-component />
+    <livewire:search-component searchkey="$searchkey"/>
 
     <div x-show="isLoading" class="w-full bg-red-500 p-5 rounded overflow-hidden">
         <strong class="text-white">loading</strong>

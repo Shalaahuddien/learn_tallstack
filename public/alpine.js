@@ -52,7 +52,7 @@ document.addEventListener('alpine:init', async () => {
 
     Alpine.data('movies', () => ({
         baseUrl: 'https://imdb8.p.rapidapi.com',
-        api: 'fa8946b5e6msh517be52504e13e6p189bd2jsn06062a93600d',
+        api: 'e8ca1aa3c0msh13242a9573852c3p1dc2bdjsn5162c0ed1793',
         listMovies: [],
         isLoading: false,
 

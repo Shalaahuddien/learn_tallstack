@@ -9,7 +9,7 @@ class Movies extends Component
 
     public $searchKey;
 
-    public function mount($urlkey)
+    public function mount($urlkey = 'marvel')
     {
 
         $this->searchKey = $urlkey;
