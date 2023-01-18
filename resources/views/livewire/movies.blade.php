@@ -26,4 +26,6 @@
 
     </div>
 
+    <livewire:pagination :currentpage='1' :totalpage='5'/>
+
 </div>
